@@ -10,7 +10,7 @@
 #include <string>
 #include <windows.h>
 
-enum class Type—omponents { LIST, BUTTON, LINE, LEGEND, NO_TYPE,PANEL };
+enum class Type–°omponents { LIST, BUTTON, LINE, LEGEND, NO_TYPE,PANEL };
 
 enum class Query
 {
@@ -23,11 +23,11 @@ enum class Query
 std::istream& operator >> (std::istream& is, Query& q)
 {
     int operation;
-    std::cout << "1.—Í˚Ú/ÔÓÍ‡Á‡Ú¸ Ó·¸ÂÍÚ" << std::endl;
-    std::cout << "2.¬˚‚Ó‰" << std::endl;
-    std::cout << "3.¬˚‚Ó‰ ÒÍ˚Ú˚ı Ó·¸ÂÍÚÓ‚" << std::endl;
-    std::cout << "4.¬˚ıÓ‰." << std::endl;
-    std::cout << "¬‡¯ ‚˚·Ó : "; is >> operation;
+    std::cout << "1.–°–∫—Ä—ã—Ç/–ø–æ–∫–∞–∑–∞—Ç—å –æ–±—å–µ–∫—Ç" << std::endl;
+    std::cout << "2.–í—ã–≤–æ–¥" << std::endl;
+    std::cout << "3.–í—ã–≤–æ–¥ —Å–∫—Ä—ã—Ç—ã—Ö –æ–±—å–µ–∫—Ç–æ–≤" << std::endl;
+    std::cout << "4.–í—ã—Ö–æ–¥." << std::endl;
+    std::cout << "–í–∞—à –≤—ã–±–æ—Ä : "; is >> operation;
     switch (operation)
     {
     case 1: {
@@ -48,36 +48,36 @@ std::istream& operator >> (std::istream& is, Query& q)
     }
     return is;
 }
-std::string ReturnName(Type—omponents type)
+std::string ReturnName(Type–°omponents type)
 {
     switch (type)
     {
-    case Type—omponents::LIST:
-        return "—ÔËÒÓÍ";
-    case Type—omponents::BUTTON:
-        return " ÓÌÔÍ‡";
-    case Type—omponents::LINE:
-        return "ÀËÌËˇ";
-    case Type—omponents::LEGEND:
-        return "Õ‡‰ÔËÒ¸";
+    case Type–°omponents::LIST:
+        return "–°–ø–∏—Å–æ–∫";
+    case Type–°omponents::BUTTON:
+        return "–ö–æ–Ω–ø–∫–∞";
+    case Type–°omponents::LINE:
+        return "–õ–∏–Ω–∏—è";
+    case Type–°omponents::LEGEND:
+        return "–ù–∞–¥–ø–∏—Å—å";
     }
 }
 
-class Graphic—omponents {
+class Graphic–°omponents {
 private:
     int id;
     std::string Name;
     bool visible;
-    Type—omponents Type;
+    Type–°omponents Type;
 public:
-    Graphic—omponents() : id(0),Name(), visible(1), Type(Type—omponents::NO_TYPE){}
+    Graphic–°omponents() : id(0),Name(), visible(1), Type(Type–°omponents::NO_TYPE){}
     void Setid(const int& newId) {  id= newId; }
     void SetName(const std::string& newName) { Name = newName; }
-    void SetType(const Type—omponents& newType) { Type = newType; }
+    void SetType(const Type–°omponents& newType) { Type = newType; }
     const int GetId() { return id; }
     const bool GetVisible() { return visible; }
     const std::string GetName() { return Name; }
-    const Type—omponents GetType() { return Type; }
+    const Type–°omponents GetType() { return Type; }
     void HideShow()
     {
         if (visible)
@@ -87,27 +87,27 @@ public:
     }
 };
 
-class Panel : public Graphic—omponents {
+class Panel : public Graphic–°omponents {
 private:
     int id;
     bool visible;
     std::string Name;
-    std::vector<Graphic—omponents> List—omponents;
+    std::vector<Graphic–°omponents> List–°omponents;
 public:
-    Panel() : id(0),Name(),visible(1),List—omponents(NULL){}
+    Panel() : id(0),Name(),visible(1),List–°omponents(NULL){}
     void Setid(const int& newId) { id = newId; }
     void SetName(const std::string& newName) { Name = newName; }
     const int GetId() { return id; }
     const bool GetVisible() { return visible; }
     const std::string GetName() { return Name; }
-    std::vector<Graphic—omponents> GetList—omponents() { return List—omponents; }
-    void Add—omponents(int newId, Type—omponents type)
+    std::vector<Graphic–°omponents> GetList–°omponents() { return List–°omponents; }
+    void Add–°omponents(int newId, Type–°omponents type)
     {
-        Graphic—omponents tmp;
+        Graphic–°omponents tmp;
         tmp.Setid(newId);
         tmp.SetName(ReturnName(type));
         tmp.SetType(type);
-        List—omponents.push_back(tmp);
+        List–°omponents.push_back(tmp);
     }
     void HideShow()
     {
@@ -119,23 +119,23 @@ public:
 };
 
 
-class Window : public Panel, public Graphic—omponents {
+class Window : public Panel, public Graphic–°omponents {
 private:
     std::string Name;
     bool visible;
-    std::vector<Graphic—omponents> List—omponents;
+    std::vector<Graphic–°omponents> List–°omponents;
     std::vector<Panel> ListPanels;
 public:
-    Window(std::string newName) : Name(newName),visible(1), List—omponents(NULL), ListPanels(NULL) {}
+    Window(std::string newName) : Name(newName),visible(1), List–°omponents(NULL), ListPanels(NULL) {}
     void SetName(const std::string& newName) { Name = newName; }
     const bool GetVisible() { return visible; }
-    void Add—omponents(int newId, Type—omponents type)
+    void Add–°omponents(int newId, Type–°omponents type)
     {
-        Graphic—omponents tmp;
+        Graphic–°omponents tmp;
         tmp.Setid(newId);
         tmp.SetName(ReturnName(type));
         tmp.SetType(type);
-        List—omponents.push_back(tmp);
+        List–°omponents.push_back(tmp);
     }
     void AddPanel(std::string newName, int newId)
     {
@@ -153,15 +153,15 @@ public:
     }
     void CreateWindowClass()
     {
-        Add—omponents(1, Type—omponents::BUTTON);
-        Add—omponents(2, Type—omponents::BUTTON);
-        Add—omponents(3, Type—omponents::BUTTON);
-        Add—omponents(1, Type—omponents::LINE);
-        Add—omponents(1, Type—omponents::LIST);
-        AddPanel("œ‡ÌÂÎ¸", 1);
-        ListPanels[0].Add—omponents(1, Type—omponents::BUTTON);
-        ListPanels[0].Add—omponents(1, Type—omponents::LIST);
-        ListPanels[0].Add—omponents(1, Type—omponents::LINE);
+        Add–°omponents(1, Type–°omponents::BUTTON);
+        Add–°omponents(2, Type–°omponents::BUTTON);
+        Add–°omponents(3, Type–°omponents::BUTTON);
+        Add–°omponents(1, Type–°omponents::LINE);
+        Add–°omponents(1, Type–°omponents::LIST);
+        AddPanel("–ü–∞–Ω–µ–ª—å", 1);
+        ListPanels[0].Add–°omponents(1, Type–°omponents::BUTTON);
+        ListPanels[0].Add–°omponents(1, Type–°omponents::LIST);
+        ListPanels[0].Add–°omponents(1, Type–°omponents::LINE);
     }
     void Output(bool showHiden)
     {
@@ -170,17 +170,17 @@ public:
             return;
         }
         std::cout<< Name << std::endl;
-        for (int i = 0; i < List—omponents.size(); i++)
+        for (int i = 0; i < List–°omponents.size(); i++)
         {
-            if(List—omponents[i].GetVisible()|| showHiden)
-                std::cout <<"    "<< List—omponents[i].GetName()<<" "<< List—omponents[i].GetId()<< std::endl;
+            if(List–°omponents[i].GetVisible()|| showHiden)
+                std::cout <<"    "<< List–°omponents[i].GetName()<<" "<< List–°omponents[i].GetId()<< std::endl;
         }
         
         for (int i = 0; i < ListPanels.size(); i++)
         {
             if (ListPanels[i].GetVisible() || showHiden)
             {
-                std::vector<Graphic—omponents> tmp = ListPanels[i].GetList—omponents();
+                std::vector<Graphic–°omponents> tmp = ListPanels[i].GetList–°omponents();
                 std::cout << "    " << ListPanels[i].GetName() << " " << ListPanels[i].GetId() << std::endl;
                 for (int j = 0; j < tmp.size(); j++)
                 {
@@ -197,12 +197,12 @@ public:
             HideShow();
             return;
         }
-        for (int i = 0; i < List—omponents.size(); i++)
+        for (int i = 0; i < List–°omponents.size(); i++)
         {
-            std::string fullName = List—omponents[i].GetName()+" " + std::to_string(List—omponents[i].GetId());
+            std::string fullName = List–°omponents[i].GetName()+" " + std::to_string(List–°omponents[i].GetId());
             if (fullName == nameObject)
             {
-                List—omponents[i].HideShow();
+                List–°omponents[i].HideShow();
                 return;
             }
         }
@@ -214,7 +214,7 @@ public:
                 ListPanels[i].HideShow();
                 return;
             }
-            std::vector<Graphic—omponents> tmp = ListPanels[i].GetList—omponents();
+            std::vector<Graphic–°omponents> tmp = ListPanels[i].GetList–°omponents();
             for (int j = 0; j < tmp.size(); j++)
             {
                 tmp[j].HideShow();
@@ -222,7 +222,7 @@ public:
             }
 
         }
-        std::cout << "------ Œ¯Ë·Í‡ 1 : ÌË˜Â„Ó ÌÂ Ì‡È‰ÂÌÌÓ ------"<<std::endl;
+        std::cout << "------ –û—à–∏–±–∫–∞ 1 : –Ω–∏—á–µ–≥–æ –Ω–µ –Ω–∞–π–¥–µ–Ω–Ω–æ ------"<<std::endl;
     }
 };
 
@@ -232,7 +232,7 @@ int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    Window t1("ŒÍÌÓ");
+    Window t1("–û–∫–Ω–æ");
     t1.CreateWindowClass();
     t1.Output(0);
 
@@ -243,7 +243,7 @@ int main()
         {
             case Query::HIDE_SHOW:{
                 std::string nameObject;
-                std::cout << "◊ÚÓ ÒÍ˚Ú¸ : ";
+                std::cout << "–ß—Ç–æ —Å–∫—Ä—ã—Ç—å : ";
                 std::cin.ignore();
                 getline(std::cin, nameObject);
                 t1.SerthObject(nameObject);
