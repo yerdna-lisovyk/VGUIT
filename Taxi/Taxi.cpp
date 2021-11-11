@@ -15,6 +15,31 @@ enum class NameStation
     Morozova
 };
 
+string ReturnName(NameStation name)
+{
+    switch (name)
+    {
+    case NameStation::Victory_Boulevard:
+        return "Бульвар победы";
+    case NameStation::One_May:
+        return "1 мая";
+    case NameStation::Nearby_gardens:
+        return "Ближние сады";
+    case NameStation::Distant_gardens:
+        return "Дальние сады";
+    case NameStation::Alekseevskie_gardens:
+        return "Алексеевские сады";
+    case NameStation::Car_market:
+        return "Авторынок";
+    case NameStation::House_OF_Sports:
+        return "Дом спорта";
+    case NameStation::Railway_hospital:
+        return "Ж/Д Госпиталь";
+    case NameStation::Morozova:
+        return "Морозова";
+    }
+}
+
 class Passenger 
 {
 private:
@@ -83,6 +108,17 @@ void GenericPassengerInStation(vector<Station>& stations)
     stations[8].AddPassengerInStation("Дорова", NameStation::House_OF_Sports);
 }
 
+int GetNumberOfPassengers(vector<Station> stations, NameStation namestation)
+{
+    for (int i = 0; i < stations.size(); i++)
+    {
+        if (namestation == stations[i].GetNameStation())
+        {
+            return stations[i].GetPassenger().capacity();
+        }
+    }
+    return 0;
+}
 class Taxi : public Station
 {
 private:
@@ -112,22 +148,70 @@ public:
         route.push_back(NameStation::Morozova);
         nowStation = NameStation::Car_market;
     }
-    void PassengerInTaxi(vector<Station> stations)
+    void PassengerInTaxi(vector<Station>& stations)
     {
         int numStation = static_cast<int>(nowStation)-1;
-        for (int i = 0; i < stations[numStation].GetPassenger().size(); i++)
+        vector<Passenger> stationsPassenger = stations[numStation].GetPassenger();
+        for (int i = 0; i < stationsPassenger.size(); i++)
         {
-            if (passenger.size() > places)
+            if (passenger.size() < places)
             {
-                p
+                if (IsStationsHave(stationsPassenger[i].GetNameStationPassenger()))
+                {
+                    passenger.push_back(stationsPassenger[i]);
+                    stations[numStation].RemovePassengerInStation(i);
+                }
             }
         }
     }
+    void PassengerInStation()
+    {
+        if (passenger.size() == 0)
+        {
+            return;
+        }
+        for (int i = 0; i < passenger.size(); i++)
+        {
+            if (nowStation == passenger[i].GetNameStationPassenger())
+                passenger.erase(passenger.begin() + i);
+        }
+    }
+    void OutputTaxiRoute(vector<Station> stations)
+    {
+        cout << "Остановка (Пассажиры) : Такси(места | пассажиры)" << endl;
+        for (int i = 0; i < route.size(); i++)
+        {
+            cout << ReturnName(route[i]) << " (" << GetNumberOfPassengers(stations, route[i]) << ") :";
+            if (route[i] == nowStation)
+            {
+                cout << name << " (" << places << " | " << passenger.size() << ")";
+            }
+            cout << endl;
+        }
+    }
+private:
+    bool IsStationsHave(NameStation nameStation)
+    {
+        for (int i = 0; i < route.size(); i++)
+        {
+            if (route[i] == nameStation)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 };
+
 int main()
 {
+    setlocale(LC_ALL, "Rus");
     vector<Station> stations;
     GenericPassengerInStation(stations);
+    Taxi t1("Игорь",2);
+    t1.GenericRouteOne();
+    t1.PassengerInTaxi(stations);
+    t1.OutputTaxiRoute(stations);
     return 0;
 }
 
