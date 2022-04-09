@@ -1,6 +1,6 @@
 #pragma once
 #include <math.h>
-void ArrayFillingA_4(double(&a)[4][4], const double y[300], const int i0, const double u[300])
+void ArrayFillingA_4(double(&a)[4][4], const double y[300], const int i0, const double u[300],int d)
 {
 	
 	for (int i = i0; i < 300; i++)//A11
@@ -17,7 +17,7 @@ void ArrayFillingA_4(double(&a)[4][4], const double y[300], const int i0, const 
 	}
 	for (int i = i0; i < 300; i++)//A41
 	{
-		a[3][0] += y[i - 1] * u[i - 1];
+		a[3][0] += y[i - 1] * u[i - d];
 	}
 
 	for (int i = i0; i < 300; i++)//A12
@@ -34,7 +34,7 @@ void ArrayFillingA_4(double(&a)[4][4], const double y[300], const int i0, const 
 	}
 	for (int i = i0; i < 300; i++)//A42
 	{
-		a[3][1] += y[i - 2] * u[i - 1];
+		a[3][1] += y[i - 2] * u[i - d];
 	}
 
 
@@ -52,28 +52,28 @@ void ArrayFillingA_4(double(&a)[4][4], const double y[300], const int i0, const 
 	}
 	for (int i = i0; i < 300; i++)//A43
 	{
-		a[3][2] += y[i - 3] * u[i - 1];
+		a[3][2] += y[i - 3] * u[i - d];
 	}
 
 
 	for (int i = i0; i < 300; i++)//A14
 	{
-		a[0][3] += y[i - 1] * u[i - 1];
+		a[0][3] += y[i - 1] * u[i - d];
 	}
 	for (int i = i0; i < 300; i++)//A24
 	{
-		a[1][3] += y[i - 2] * u[i - 1];
+		a[1][3] += y[i - 2] * u[i - d];
 	}
 	for (int i = i0; i < 300; i++)//A34
 	{
-		a[2][3] += u[i - 1] * y[i - 3];
+		a[2][3] += u[i - d] * y[i - 3];
 	}
 	for (int i = i0; i < 300; i++)//A44
 	{
-		a[3][3] += pow(u[i - 1], 2.);
+		a[3][3] += pow(u[i - d], 2.);
 	}
 }
-void ArrayFillingP_4(double(&b)[4], const double y[300], const int i0, const double u[300])
+void ArrayFillingP_4(double(&b)[4], const double y[300], const int i0, const double u[300],int d)
 {
 	for (int i = i0; i < 300; i++)//B1
 	{
@@ -89,7 +89,7 @@ void ArrayFillingP_4(double(&b)[4], const double y[300], const int i0, const dou
 	}
 	for (int i = i0; i < 300; i++)//B4
 	{
-		b[3] += y[i] * u[i - 1];
+		b[3] += y[i] * u[i - d];
 	}
 }
 

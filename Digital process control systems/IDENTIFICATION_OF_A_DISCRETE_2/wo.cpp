@@ -136,9 +136,9 @@ int main()
 	//3 порядок
 	double a_4[4][4] = { 0 };
 	double tmp[4][4] = { 0 };
-	ArrayFillingA_4(a_4, y, i0, u);
+	ArrayFillingA_4(a_4, y, i0, u,1);
 	double b_4[4] = { 0 };
-	ArrayFillingP_4(b_4, y, i0, u);
+	ArrayFillingP_4(b_4, y, i0, u,1);
 	delta = Determenant_4(a_4);
 
 	tmpMatrix(a_4, b_4, tmp, 0);

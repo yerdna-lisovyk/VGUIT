@@ -1,6 +1,6 @@
 #pragma once
 #include <math.h>
-double determinant(double matrix[3][3])
+double determinant(double(&matrix)[3][3])
 {
 	double a11 = matrix[0][0];
 	double a12 = matrix[0][1];
@@ -82,7 +82,8 @@ double Determenant_4(double(&a)[4][4])
 			}
 		}
 		k++;
-		sum += pow((-1.),(k+1.)) * determinant(matrix);
+		double pop = pow((-1.), (k + 1.));
+		sum += pop *a[k-1][0] * determinant(matrix);
 	}
 	return sum;
 }
