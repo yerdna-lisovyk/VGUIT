@@ -61,7 +61,7 @@ int main()
 		int x = i - d;
 		y[i + 1] = a1 * y[i] + a2 * y[i - 1] + b * u[x];
 		double pip = ((double)rand() / (double)RAND_MAX * (2 - 0) + 0)-1;
-		//ys[i + 1] = y[i + 1] + p * pip;
+		ys[i + 1] = y[i + 1] + p * pip;
 	}
 	ofstream out;
 	out.open("y.txt");
