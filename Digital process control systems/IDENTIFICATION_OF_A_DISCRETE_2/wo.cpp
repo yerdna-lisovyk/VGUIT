@@ -60,10 +60,10 @@ int main()
 		u[i] = 1;
 		int x = i - d;
 		y[i + 1] = a1 * y[i] + a2 * y[i - 1] + b * u[x];
-		//double pip = ((double)rand() / (double)RAND_MAX * (2 - 0) + 0)-1;
-		//ys[i + 1] = y[i + 1] + p * pip;
+		double pip = ((double)rand() / (double)RAND_MAX * (2 - 0) + 0)-1;
+		ys[i + 1] = y[i + 1] + p * pip;
 	}
-	/*ofstream out;
+	ofstream out;
 	out.open("y.txt");
 	for(int i=0;i<N;i++)
 	{
@@ -75,7 +75,7 @@ int main()
 	{
 		out<< ys[i]<<endl;
 	}
-	out.close();*/
+	out.close();
 	ifstream file("ys.txt");
 	for (int i = 0; i < N; i++)
 	{
@@ -136,9 +136,9 @@ int main()
 	//3 порядок
 	double a_4[4][4] = { 0 };
 	double tmp[4][4] = { 0 };
-	ArrayFillingA_4(a_4, y, i0, u,1);
+	ArrayFillingA_4(a_4, ys, i0, u,1);
 	double b_4[4] = { 0 };
-	ArrayFillingP_4(b_4, y, i0, u,1);
+	ArrayFillingP_4(b_4, ys, i0, u,1);
 	delta = Determenant_4(a_4);
 
 	tmpMatrix(a_4, b_4, tmp, 0);
