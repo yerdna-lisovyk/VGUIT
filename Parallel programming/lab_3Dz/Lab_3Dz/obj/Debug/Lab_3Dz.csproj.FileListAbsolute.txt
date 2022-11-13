@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\bin\Debug\Lab_3Dz.exe.config
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\bin\Debug\Lab_3Dz.exe
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\bin\Debug\Lab_3Dz.pdb
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\obj\Debug\Lab_3Dz.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\obj\Debug\Lab_3Dz.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\obj\Debug\Lab_3Dz.Form1.resources
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\obj\Debug\Lab_3Dz.Properties.Resources.resources
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\obj\Debug\Lab_3Dz.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\obj\Debug\Lab_3Dz.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\obj\Debug\Lab_3Dz.exe
+C:\Users\Admin\source\repos\Lab_3Dz\Lab_3Dz\obj\Debug\Lab_3Dz.pdb

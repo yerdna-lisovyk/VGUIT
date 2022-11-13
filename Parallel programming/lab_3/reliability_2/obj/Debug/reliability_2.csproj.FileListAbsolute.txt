@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\reliability_2\reliability_2\bin\Debug\reliability_2.exe.config
+C:\Users\Admin\source\repos\reliability_2\reliability_2\bin\Debug\reliability_2.exe
+C:\Users\Admin\source\repos\reliability_2\reliability_2\bin\Debug\reliability_2.pdb
+C:\Users\Admin\source\repos\reliability_2\reliability_2\obj\Debug\reliability_2.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\reliability_2\reliability_2\obj\Debug\reliability_2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\source\repos\reliability_2\reliability_2\obj\Debug\reliability_2.Form1.resources
+C:\Users\Admin\source\repos\reliability_2\reliability_2\obj\Debug\reliability_2.Properties.Resources.resources
+C:\Users\Admin\source\repos\reliability_2\reliability_2\obj\Debug\reliability_2.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\reliability_2\reliability_2\obj\Debug\reliability_2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\reliability_2\reliability_2\obj\Debug\reliability_2.exe
+C:\Users\Admin\source\repos\reliability_2\reliability_2\obj\Debug\reliability_2.pdb
